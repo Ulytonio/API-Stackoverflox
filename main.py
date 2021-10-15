@@ -10,7 +10,7 @@ from nltk.stem.wordnet import WordNetLemmatizer
 import pickle
 from json import load
 
-stop_words = load(open("stopsowrds.json","r"))
+stopwords = stopwords.words("english")
 wn = nltk.WordNetLemmatizer()
 
 infile = open("process.p", "rb")
