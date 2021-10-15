@@ -42,7 +42,7 @@ def clean_text(x):
     x = x.replace("c #", "c#")
     return x
 
-@app.post("/")
+@app.get("/")
 async def Question_Prédictor(
     Question: str
 ):
