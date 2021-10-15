@@ -26,6 +26,7 @@ def clean_text(x):
     
     # Remove unicode characters
     x = x.encode("ascii", "ignore").decode()
+    
     x = x.replace('\\n',' ')
     # Remove English contractions
     x = re.sub("\'\w+", '', x)
@@ -39,6 +40,7 @@ def clean_text(x):
     x = re.sub('\s+', ' ', x)
     # Case normalization
     x = x.lower()
+    
     x = x.replace("c #", "c#")
     return x
 
@@ -46,8 +48,7 @@ def clean_text(x):
 async def Question_Prédictor(
     Question: str
 ):
-     
-    x = BeautifulSoup(Question,"lxml").get_text()
+    x = BeautifulSoup(Question,"html.parser").get_text()
     x = clean_text(x) 
     x = nltk.tokenize.word_tokenize(x)
     x = [word for word in x if word not in stop_words]
