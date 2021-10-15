@@ -1,0 +1,6 @@
+sklearn
+fastapi
+panda
+numpy
+json
+nltk
