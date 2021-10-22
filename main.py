@@ -9,7 +9,7 @@ import pickle
 stop_words = stopwords.words("english")
 wn = nltk.WordNetLemmatizer()
 
-infile = open("process.p", "rb")
+infile = open("process_bis.p", "rb")
 process = pickle.load(infile)
 infile.close()
 
