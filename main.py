@@ -50,6 +50,6 @@ async def Question_Prédictor(
     x = [word for word in x if word not in stop_words]
     x = [wn.lemmatize(word) for word in x]
     x = process["Tf-idf"].transform([x])
-    x = process["RandomForrestClassifier"].predict(x)
+    x = process["LogisticRegression"].predict(x)
     x = process["Multi-Label-Binarizer"].inverse_transform(x)
     return x
